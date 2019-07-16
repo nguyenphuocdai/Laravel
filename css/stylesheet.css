@@ -52,6 +52,7 @@ body {
   font-family: "Rubik", sans-serif;
   font-size: 14px;
   line-height: 22px;
+  overflow-x: hidden
 }
 
 form {
@@ -507,6 +508,9 @@ hr {
   display: flex;
   -ms-flex-item-align: stretch;
   align-self: stretch;
+}
+#header .logo img {
+  width: 60px;
 }
 #header .header-row {
   position: relative;

@@ -1,105 +1,113 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <base href="/" />
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no" />
     <link href="images/favicon.png" rel="icon" />
     <title>Payyed - Money Transfer and Online Payments HTML Template</title>
-    <meta
-      name="description"
-      content="This professional design html template is for build a Money Transfer and online payments website."
-    />
+    <meta name="description" content="This professional design html template is for build a Money Transfer and online payments website." />
     <meta name="author" content="harnishdesign.net" />
 
     <!-- Web Fonts
                 ============================================= -->
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Rubik:300,300i,400,400i,500,500i,700,700i,900,900i"
-      type="text/css"
-    />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:300,300i,400,400i,500,500i,700,700i,900,900i" type="text/css" />
 
     <!-- Stylesheet
                 ============================================= -->
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="vendor/bootstrap/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="vendor/font-awesome/css/all.min.css"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="vendor/daterangepicker/daterangepicker.css"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="vendor/owl.carousel/assets/owl.carousel.min.css"
-    />
-    <link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
-  </head>
-  <body ng-app="myApp">
+    <link rel="stylesheet" type="text/css" href="./vendor/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="./vendor/font-awesome/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="./vendor/daterangepicker/daterangepicker.css" />
+    <link rel="stylesheet" type="text/css" href="./vendor/owl.carousel/assets/owl.carousel.min.css" />
+    <link rel="stylesheet" type="text/css" href="./css/stylesheet.css" />
+
+    <style>
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            50% {
+                opacity: .5;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes fadeOut {
+            0% {
+                opacity: 1;
+            }
+            50% {
+                opacity: .5;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+        
+        .ng-enter {
+            animation: fadeOut 0.5s both linear, fadeIn 0.5s both linear;
+            z-index: 8888;
+        }
+        
+        .ng-leave {
+            animation: fadeIn 0.5s both linear, fadeOut 0.5s both linear;
+            z-index: 9999;
+        }
+    </style>
+
+    <script src="./js/angular.min.js"></script>
+    <script src="./js/angular-route.js"></script>
+    <script src="./js/angular-animate.min.js"></script>
+</head>
+
+<body ng-app="myApp">
     <!-- <div id="preloader">
       <div data-loader="dual-ring"></div>
     </div> -->
     <div id="main-wrapper" ng-controller="myController">
-      <header id="header" ng-hide="isShowMenu()">
-        <div class="container">
-          <div class="header-row">
-            <div class="header-column justify-content-start">
-              <!-- Logo
+        <header id="header" ng-hide="isShowMenu()">
+            <div class="container">
+                <div class="header-row">
+                    <div class="header-column justify-content-start">
+                        <!-- Logo
                       ============================= -->
-              <div class="logo">
-                <a class="d-flex" href="/home" title="Payyed - HTML Template"
-                  ><img src="images/logo.png" alt="Payyed"
-                /></a>
-              </div>
-              <!-- Logo end -->
-              <!-- Collapse Button
+                        <div class="logo">
+                            <a class="d-flex" href="/home" title="Payyed - HTML Template">
+                              <img src="images/logo.png" alt="Payyed" />
+                            </a>
+                        </div>
+                        <!-- Logo end -->
+                        <!-- Collapse Button
                       ============================== -->
-              <button
-                class="navbar-toggler"
-                type="button"
-                data-toggle="collapse"
-                data-target="#header-nav"
-              >
-                <span></span> <span></span> <span></span></button
-              ><!-- Collapse Button end -->
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#header-nav">
+                            <span></span> <span></span> <span></span></button>
+                        <!-- Collapse Button end -->
 
-              <!-- Primary Navigation
+                        <!-- Primary Navigation
                       ============================== -->
-              <nav class="primary-menu navbar navbar-expand-lg">
-                <div id="header-nav" class="collapse navbar-collapse">
-                  <ul class="navbar-nav mr-auto">
-                    <li><a href="/dashboard">Dashboard</a></li>
-                    <li><a href="/transactions">Transactions</a></li>
-                    <li><a href="/send">Send</a></li>
-                    <li><a href="/request">Request</a></li>
-                    <li><a href="/about">About Us</a></li>
-                    <li class="dropdown dropdown-mega">
-                      <a class="dropdown-toggle" href="#">Pages</a>
-                      <ul class="dropdown-menu">
-                        <li>
-                          <div class="dropdown-mega-content">
-                            <div class="row">
-                              <div class="col-lg-3">
-                                <span class="sub-title">Dahsboard</span>
-                                <ul class="dropdown-mega-submenu">
-                                  <li>
-                                    <a class="dropdown-item" href="/dashboard"
-                                      >Dashboard</a
+                        <nav class="primary-menu navbar navbar-expand-lg">
+                            <div id="header-nav" class="collapse navbar-collapse">
+                                <ul class="navbar-nav mr-auto">
+                                    <li><a href="/dashboard">Dashboard</a></li>
+                                    <!-- <li><a href="/transactions">Transactions</a></li> -->
+                                    <!-- <li><a href="/send">Send</a></li> -->
+                                    <!-- <li><a href="/request">Request</a></li> -->
+                                   
+                                    <li class="dropdown dropdown-mega">
+                                        <a class="dropdown-toggle" href="#">Pages</a>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <div class="dropdown-mega-content">
+                                                    <div class="row">
+                                                        <div class="col-lg-3">
+                                                            <span class="sub-title">Dahsboard</span>
+                                                            <ul class="dropdown-mega-submenu">
+                                                                <li>
+                                                                    <a class="dropdown-item" href="/dashboard">Dashboard</a
                                     >
                                   </li>
                                   <li>
@@ -135,15 +143,12 @@
                                       href="/card-account"
                                       >Cards & Bank Accounts
                                     </a>
-                                  </li>
-                                  <li>
-                                    <a
-                                      class="dropdown-item"
-                                      href="/notifications"
-                                      >Notifications</a
+                                                                </li>
+                                                                <li>
+                                                                    <a class="dropdown-item" href="/notifications">Notifications</a
                                     >
                                   </li>
-                                  <li>
+                                  <!-- <li>
                                     <a class="dropdown-item" href="/withdraw"
                                       >Withdraw</a
                                     >
@@ -152,14 +157,15 @@
                                     <a class="dropdown-item" href="/deposit"
                                       >Deposit</a
                                     >
-                                  </li>
+                                  </li> -->
                                 </ul>
                               </div>
                             </div>
                           </div>
                         </li>
                       </ul>
-                    </li>
+                                    </li>
+                                    <li><a href="/about">About Us</a></li>
                   </ul>
                 </div>
               </nav>
@@ -172,9 +178,8 @@
               <nav class="login-signup navbar navbar-expand">
                 <ul class="navbar-nav">
                   <li><a href="/login">Login</a></li>
-                  <li class="align-items-center h-auto ml-sm-3">
-                    <a class="btn btn-primary d-none d-sm-block" href="/signup"
-                      >Sign Up</a
+                                                                <li class="align-items-center h-auto ml-sm-3">
+                                                                    <a class="btn btn-primary d-none d-sm-block" href="/signup">Sign Up</a
                     >
                   </li>
                 </ul>
@@ -189,10 +194,9 @@
     <div id="content" ng-view style="height: 100%"></div>
 
     <script src="./js/script.js"></script>
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="vendor/owl.carousel/owl.carousel.min.js"></script>
-    <script src="js/theme.js"></script>
-    <script></script>
+    <script src="./vendor/jquery/jquery.min.js"></script>
+    <script src="./vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="./vendor/owl.carousel/owl.carousel.min.js"></script>
+    <!-- <script src="./js/theme.js"></script> -->
   </body>
 </html>

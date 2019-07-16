@@ -1,0 +1,14 @@
+List Edit
+========================
+1. Favicon, Logo
+2. Page Title
+3. Edit Top Menu (3 only items)
+
+	Logo(Home)	Features(Rename Page)		About Us			
+				Dashboard	|	Account
+
+Note: default menu "Features" will link to Dashboard
+
+4. Edit footer menu, replace with top menu item but use menu items at level 1 only (don't include children menu)
+5. Replace Payyed keyword with MKSolutions in all pages (in use)
+6. Remove section "What people are saying about Payyed"
