@@ -1,15 +1,15 @@
-var app = angular.module("myApp", ["ngRoute", 'ngAnimate']);
+var app = angular.module("myApp", ["ngRoute", "ngAnimate"]);
 app.config(function($routeProvider) {
   $routeProvider
     .when("/", {
       templateUrl: "index-1.html"
     })
-    .when("/dashboard", {
-      templateUrl: "dashboard.html"
-    })
-    .when("/transactions", {
-      templateUrl: "transactions.html"
-    })
+    // .when("/dashboard", {
+    //   templateUrl: "dashboard.html"
+    // })
+    // .when("/transactions", {
+    //   templateUrl: "transactions.html"
+    // })
     .when("/send", {
       templateUrl: "send-money.html"
     })
@@ -25,15 +25,15 @@ app.config(function($routeProvider) {
     .when("/notifications", {
       templateUrl: "profile-notifications.html"
     })
-    .when("/withdraw", {
-      templateUrl: "withdraw.html"
-    })
-    .when("/deposit", {
-      templateUrl: "deposit.html"
-    })
-    .when("/about", {
-      templateUrl: "about-us.html"
-    })
+    // .when("/withdraw", {
+    //   templateUrl: "withdraw.html"
+    // })
+    // .when("/deposit", {
+    //   templateUrl: "deposit.html"
+    // })
+    // .when("/about", {
+    //   templateUrl: "about-us.html"
+    // })
     .when("/login", {
       name: "login",
       templateUrl: "login.html"
@@ -75,6 +75,10 @@ app.controller("myController", [
       }
       return false;
     };
+
+    $scope.isShowMenu = function() {
+      // console.log($route);
+    };
   }
 ]);
 
@@ -85,13 +89,11 @@ app.run(function($rootScope) {
         "use strict";
 
         // Preloader
-        $(window).on("load", function() {
-          $('[data-loader="circle-side"]').fadeOut(); // will first fade out the loading animation
-          $("#preloader")
-            .delay(333)
-            .fadeOut("slow"); // will fade out the white DIV that covers the website.
-          $("body").delay(333);
-        });
+        $('[data-loader="circle-side"]').fadeOut();
+        $("#preloader")
+          .delay(500)
+          .fadeOut("slow");
+        $("body").delay(500);
 
         /*---------------------------------------------------
             Primary Menu
@@ -223,7 +225,7 @@ app.run(function($rootScope) {
               }
             });
           });
-        }, 10);
+        }, 100);
 
         /*---------------------------------------------------
     YouTube video to autoplay in modal

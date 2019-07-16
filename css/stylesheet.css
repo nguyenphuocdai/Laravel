@@ -42,6 +42,11 @@
 /* =================================== */
 /*  Basic Style 
 /* =================================== */
+
+/* * {
+  text-align: justify;
+} */
+
 body, html {
   height: 100%;
 }
@@ -510,7 +515,7 @@ hr {
   align-self: stretch;
 }
 #header .logo img {
-  width: 60px;
+  width: 80px;
 }
 #header .header-row {
   position: relative;
@@ -586,8 +591,10 @@ hr {
 }
 .primary-menu ul.navbar-nav > li > a:not(.btn), .login-signup ul.navbar-nav > li > a:not(.btn) {
   height: 80px;
-  padding-left: 0.85em;
-  padding-right: 0.85em;
+  /* padding-left: 0.85em;
+  padding-right: 0.85em; */
+  padding-left: 1.5em;
+  padding-right: 1.5em;
   color: #4c4d4d;
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
@@ -2758,4 +2765,8 @@ a.bg-primary:focus, a.bg-primary:hover, button.bg-primary:focus, button.bg-prima
 }
 .ui-menu .ui-menu-divider {
   display: none;
+}
+
+.content-business i{
+  color: #d6ae41;
 }
