@@ -145,7 +145,6 @@
                                       >Transactions</a
                                     >
                                   </li>
-                                 
                                 </ul>
                               </div>
                               <div class="col-lg-3">
@@ -229,12 +228,20 @@
       </header>
     </div>
 
-    <div id="content" ng-view style="height: 100%"></div>
+    <div>
+      <div id="preloader-content" ng-hide="isLoading()">
+        <div data-loader="dual-ring"></div>
+      </div>
+      <div ng-view style="height: 100%"></div>
+    </div>
 
     <script src="./js/script.js"></script>
     <script src="./vendor/jquery/jquery.min.js"></script>
     <script src="./vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="./vendor/owl.carousel/owl.carousel.min.js"></script>
     <script src="./js/theme.js"></script>
+
+    <script src="vendor/daterangepicker/moment.min.js"></script>
+    <script src="vendor/daterangepicker/daterangepicker.js"></script>
   </body>
 </html>
