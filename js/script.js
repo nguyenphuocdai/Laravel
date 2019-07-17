@@ -4,12 +4,12 @@ app.config(function($routeProvider) {
     .when("/", {
       templateUrl: "index-1.html"
     })
-    // .when("/dashboard", {
-    //   templateUrl: "dashboard.html"
-    // })
-    // .when("/transactions", {
-    //   templateUrl: "transactions.html"
-    // })
+    .when("/dashboard", {
+      templateUrl: "dashboard.html"
+    })
+    .when("/transactions", {
+      templateUrl: "transactions.html"
+    })
     .when("/send", {
       templateUrl: "send-money.html"
     })
@@ -84,21 +84,18 @@ app.controller("myController", [
 
 app.run(function($rootScope) {
   $rootScope.$on("$routeChangeStart", function(event, next, current) {
+    $(".dropdown-menu")
+      .stop()
+      .css("display", "none");
+
+    $('[data-loader="circle-side"]').fadeOut();
+    $("#preloader-content")
+      .show()
+      .fadeOut("slow");
+
     setTimeout(() => {
       (function($) {
         "use strict";
-
-        // Preloader
-        $('[data-loader="circle-side"]').fadeOut();
-        $("#preloader")
-          .delay(500)
-          .fadeOut("slow");
-        $("body").delay(500);
-
-        /*---------------------------------------------------
-            Primary Menu
-        ----------------------------------------------------- */
-
         // Dropdown show on hover
         $(
           ".primary-menu ul.navbar-nav li.dropdown, .login-signup ul.navbar-nav li.dropdown"
@@ -282,5 +279,50 @@ app.run(function($rootScope) {
         });
       })(jQuery);
     }, 10);
+
+    $(function() {
+      var start = moment().subtract(29, "days");
+      var end = moment();
+      function cb(start, end) {
+        $("#dateRange span").html(
+          start.format("MMMM D, YYYY") + " - " + end.format("MMMM D, YYYY")
+        );
+      }
+      $("#dateRange").daterangepicker(
+        {
+          startDate: start,
+          endDate: end,
+          ranges: {
+            Today: [moment(), moment()],
+            Yesterday: [
+              moment().subtract(1, "days"),
+              moment().subtract(1, "days")
+            ],
+            "Last 7 Days": [moment().subtract(6, "days"), moment()],
+            "Last 30 Days": [moment().subtract(29, "days"), moment()],
+            "This Month": [
+              moment().startOf("month"),
+              moment().endOf("month")
+            ],
+            "Last Month": [
+              moment()
+                .subtract(1, "month")
+                .startOf("month"),
+              moment()
+                .subtract(1, "month")
+                .endOf("month")
+            ]
+          }
+        },
+        cb
+      );
+      cb(start, end);
+    });
+  });
+
+  $rootScope.$on("$routeChangeSuccess", function($event, next, current) {
+    $("#preloader-content")
+      .hide()
+      .fadeOut("slow");
   });
 });
